@@ -1,0 +1,926 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+html{
+font-size:62.5%; /*16px ×　62.5%=10px*/
+}
+
+body {
+  color:#454545;
+  font-family:'EB Garamond', sans-serif;
+  font-size:1.6rem;
+  background-color: #f4f4f1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  }
+
+img{
+  max-width: 100%;
+  height:auto;
+}
+
+a{
+  color: #454545;
+  text-decoration: none;
+}
+
+.expannd{
+  overflow: hidden;
+  height: 100vh;
+  width: auto;
+  text-align: center;
+}
+
+.expannd img{
+  height: 100%;
+  max-width: none;
+  width: auto;
+}
+
+.height{
+  height: 100%;
+}
+/*------------------
+      utility
+------------------*/
+.relative{
+  position: relative;
+}
+
+.none{
+  display: none;
+}
+
+.last_margin{
+  margin: 20px;
+}
+/*------------------
+    navigation1
+------------------*/
+
+.btn-trigger{
+  -webkit-appearance:none;
+  apearance:none;
+  position: fixed;
+  top:11px;
+  right: 12px;
+  z-index:110;
+  width: 40px;
+  height: 20px;
+  border:none;
+  background-color: #fff;
+  }
+
+.btn-trigger span{
+  position: absolute;
+  display: block;
+  width: 28px;
+  height: 1px;
+  background-color: #454545;
+  transition: all 0.5s;
+}
+
+.btn-trigger span:first-of-type{
+  top: 0;
+
+}
+
+.btn-trigger span:nth-of-type(2){
+  top: 10px;
+
+}
+
+.btn-trigger span:last-of-type{
+  bottom: 0px;
+  }
+
+.btn-trigger .active span:first-of-type{
+  transform: rotate(45deg);
+  top: 10px;
+}
+
+.btn-trigger .active span:nth-of-type(2){
+  opacity:0;
+}
+
+.btn-trigger .active span:last-of-type{
+  transform: rotate(-45deg);
+  bottom: 10px;
+}
+
+.margin5{
+  margin: 2.5px 8.5px 0 ;
+}
+
+
+.navigation{
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 100;
+  width: 100%;
+  height:120%;
+  padding: 120px 0 150px;
+  background-color: rgba(255,255,255,0.97)
+}
+
+/*------------------
+    navigation2
+------------------*/
+
+/*検索フォーム*/
+#form02{
+    background-color: white;
+    width:200px;
+    height: 20px;
+    border: 1px green solid;
+  margin: 8px auto;
+}
+#form02 input{
+    vertical-align: top;
+    margin: 0px;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+#form02{
+    border-radius: 10px;
+}
+#input02{
+    border: none;
+    width: 170px;
+    padding-left: 10px;
+}
+#submit02{
+    width: 30px;
+    border: none;
+    background-image: url(画像へのパス);
+    background-position: center;
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+}
+
+.search{
+  width: 100%;
+  margin: 0 auto ;
+}
+
+.click{
+  background-image: url("../images/_i_icon_00185_icon_001850_16.png");
+}
+/*検索フォーム*/
+
+/*ハンバーガーメニュー*/
+
+.hamburger {
+  display : block;
+  z-index : 3;
+  width : 42px;
+  cursor: pointer;
+  text-align: center;
+}
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : #555;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition   : 0.3s ease-in-out;
+  transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+  -webkit-transform: translateY(6px);
+  -moz-transform   : translateY(6px);
+  transform        : translateY(6px);
+}
+.hamburger.active span:nth-child(2){
+-webkit-transform: translateY(-4px);
+  -moz-transform   : translateY(-4px);
+  transform        : translateY(-4px);
+}
+
+.hamburger.active span:nth-child(3) {
+  -webkit-transform: translateY(-14px);
+  -moz-transform   : translateY(-14px);
+  transform        : translateY(-14px);
+}
+
+nav.globalMenuSp {
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: #000;
+  background: #fff;
+  text-align: center;
+  transform: translateX(100%);
+  transition: all 0.6s;
+  width: 100%;
+}
+
+nav.globalMenuSp ul {
+  background: #ccc;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+nav.globalMenuSp ul li:hover{
+  background :#ddd;
+}
+
+nav.globalMenuSp ul li a {
+  display: block;
+  color: #000;
+  padding: 1em 0;
+  text-decoration :none;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+  transform: translateX(0%);
+}
+
+/*ハンバーガーメニュー*/
+
+#sbox1{
+max-width:300px;
+height:50px;
+border-radius:2px;
+outline:0;
+margin-bottom:40px;
+background:#eee;
+}
+/*------------------
+       headr
+------------------*/
+.header{
+  position: fixed;
+  background-color: rgba(255,255,255,1.00);
+  width: 100%;
+  z-index:110;
+}
+.header_title{
+  font-size: 2.2rem;
+  padding: 9px;
+  z-index: 110;
+  color:#7b604b;
+}
+
+.absolute{
+  position: absolute;
+  top: 4px;
+  left:165px;
+}
+
+.absolute02{
+  position:absolute;
+  top: 0;
+  right:0;
+  padding: 5px 5px 0 0;
+
+}
+
+.absolute03{
+  position:fixed;
+  bottom:0;
+  right:0;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.absolute04{
+  position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+.absolute05{
+  position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+.absolute06{
+  position: absolute;
+    top: 0;
+  right: 0;
+    margin: 2.5px 8.5px 2.5px 0;
+  }
+
+.absolute08{
+  position: absolute;
+    top: 0;
+  right: 0;
+    margin: 2.5px 55.5px 2.5px 0;
+  }
+
+.absolute07 {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.box {
+  margin: auto;
+  height: 100vh;
+  width: auto;
+  background-color: #A1A1A1;
+}
+
+.box2{
+  margin: auto;
+  height: 145px;
+  width: 220px;
+  background-color: #A1A1A1;
+}
+
+.box3{
+  margin: auto;
+  height: 70px;
+  width: 180px;
+  background-color:#DBDBDB;
+}
+
+.marig-auto{
+  margin: 0 auto;
+  height: 50%;
+}
+.right-line{
+  position:fixed;
+  top:50%;
+  right: 7px}
+
+.left-line{
+  position:fixed;
+  top:50%;
+  left: 7px}
+
+.menu_item:first-of-type{
+  position: absolute;
+  top: -90%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 31%;
+    margin-top: 0;
+}
+
+.text_center{
+  text-align: center;
+}
+
+.justify-content{
+  justify-content:center;
+}
+
+.margin_right{
+  margin-right:5px;
+}
+
+.mv_menu_list{
+  overflow: auto;
+    padding: 0 19%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+.mv_menu{
+  position: absolute;
+    left: 0;
+    bottom: 11%;
+    right: 0;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.content2{
+  position:fixed;
+  left:0;
+  bottom:0;
+  background-color: rgba(255,255,255,1.00);
+  width: 100%;
+}
+.inner{
+  padding:13px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.menu__title{
+  font-size: 2.2rem;
+  text-align: center;
+  color:#7b604b;
+  padding: 20px;
+  }
+
+.margin02{
+  margin: 0px 20px 0px 34px;
+}
+
+.fixed{
+  position: fixed;
+  left:0
+}
+
+.section{
+  background-color: #fff;
+  margin: 60px 20px;
+
+}
+
+.section-header{
+  font-size: 20.4rem;
+  color:#7b604b;
+  text-align: center;
+  padding: 20px;
+}
+
+.size{
+  width: 50%;
+}
+
+.section-body{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+.display_block{
+  display: block;
+}
+
+.display_flex{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+.text{
+  font-size: 1rem;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.section-footer{
+  text-align: center;
+  padding: 30px;
+}
+
+.copy{display: block;
+  text-align: center;
+}
+
+/*------------------
+     Profile contents
+------------------*/
+
+.parent{
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+17,f4f4ed+17,f4f4ed+17 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(left,  #ffffff 17%, #f4f4ed 17%, #f4f4ed 17%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #ffffff 17%,#f4f4ed 17%,#f4f4ed 17%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #ffffff 17%,#f4f4ed 17%,#f4f4ed 17%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4ed',GradientType=1 ); /* IE6-9 */
+  margin: 20px 20px 20px 34px;
+}
+
+.parent2{
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+17,f4f4ed+17,f4f4ed+17 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(left,  #ffffff 17%, #f4f4ed 17%, #f4f4ed 17%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #ffffff 17%,#f4f4ed 17%,#f4f4ed 17%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #ffffff 17%,#f4f4ed 17%,#f4f4ed 17%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4ed',GradientType=1 ); /* IE6-9 */
+  margin: 20px;
+}
+
+.delete{
+  margin-top: 0;
+}
+
+.margin{
+  margin: 20px;
+}
+
+.padding_bottom{
+  padding-bottom: 40px;
+}
+
+.content_text{
+  font-size: 1rem;
+  font-family: YuGothic, "Yu Gothic", "sans-serif";
+}
+
+.year{
+  text-align:center;
+  width: 20%;
+  margin: auto;
+  padding: 20px 0;
+  font-size: 1rem;
+
+}
+
+.child{margin-bottom: 20px;
+}
+
+.child2{margin-bottom: 74px;
+}
+
+.margin10{
+  margin:10px 0 10px ;
+}
+
+.backgrand{
+  background-color: #fff;
+  margin: 0 20px 0 34px;
+  margin-bottom: 20px;
+}
+
+.backgrand_long{
+  background-color: #fff;
+  margin-left: 20px ;
+  margin-bottom: 20px;
+}
+
+.padding{
+  padding: 20px 0;
+}
+
+.content{
+  width: 80%;
+  padding:  20px 20px 0 20px;
+  margin-left: 20px;
+  background-color:#fff;
+}
+
+.image{margin:0 20px;
+}
+
+.pc{
+  display: none;
+}
+
+/*------------------
+     gallary
+------------------*/
+
+.flex-box{
+display: flex;
+flex-wrap: wrap;
+float:left;
+}
+
+.flex-box li {
+  width: calc(100%/3);/*←画像を横に4つ並べる場合*/
+  padding:0 5px;/*←画像の左右に5pxの余白を入れる場合*/
+  box-sizing:border-box;
+}
+.flex-box li img {
+  max-width:100%; /*画像のはみだしを防ぐ*/
+  height: auto; /*画像の縦横比を維持 */
+  border:solid 1px #ccc; /*←画像を1pxのグレーの枠線で囲む指定の場合*/
+}
+
+
+.list-item{
+    opacity: 1;
+}
+.list-item.is-hidden {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+}
+.list-btn {
+    margin-top: 20px;
+}
+.list-btn.is-btn-hidden{
+  display:none;
+}
+.list-btn button {
+    background-color: #333;
+  color:#fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    height: 32px;
+    line-height: 32px;
+    width: 120px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@charset "UTF-8";
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  font-weight: normal;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+
+/* clearfix */
+.clearfix:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:750px){
+
+  .pc-inner{
+    max-width: 1216px;
+    margin:auto;
+  }
+
+  .header{
+    position: relative;
+  }
+
+  .sp{
+    display: none;
+  }
+
+  .pc{
+    display: block;
+  }
+
+  .sp_display_block{
+    display: block;
+  }
+
+  .sp_display_flex{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+  }
+
+  .section-header{
+    font-size: 2.8rem;
+  }
+
+  .section-footer{
+    width: 50%;
+    margin: auto;
+  }
+
+  .text{
+    font-size: 2rem;
+  }
+  .img_center{
+    text-align: center;
+  }
+
+  .pc_display_flex{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+  }
+
+  .pc_margin{
+    margin: 20px;
+
+  }
+
+  .text_margin{
+    width: 50%;
+    margin: auto;
+  }
+
+  .width{
+    max-width: 100%;
+  }
+
+  .width_img{
+    width: 50%;
+  }
+/*nav*/
+
+.navigation{
+  display: block;
+  position:relative;
+  top:0;
+  left:0;
+  z-index:100;
+  width: 100%;
+  height:120%;
+  padding: 20px 0px;
+  background-color: rgba(255,255,255,0.97);
+}
+
+
+
+nav{
+text-align: center;
+}
+nav ul{
+margin: 0 ;
+padding: 0 ;
+}
+nav ul li{
+list-style: none;
+display: inline-block;
+width: 18%;
+min-width: 90px;
+}
+nav ul li a{
+text-decoration: none;
+color: #333;
+}
+nav ul li.nav-list a{
+color: #F33135;
+}
+nav ul li a:hover{
+color: #E7DA66;
+}
+
+
+/*profile*/
+  .img_size{
+    width: 100%;
+  }
+
+  .menu__title{
+    font-size:3rem;
+  }
+
+  .year{
+    font-size: 1.6rem;
+  }
+
+  .content_text{
+    font-size: 1.6rem;
+
+  }
+
+}
