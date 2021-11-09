@@ -97,6 +97,13 @@
 		<img src="https://res.cloudinary.com/dqea0llpw/image/upload/v1633252475/_i_icon_12007_icon_120070_16_dp7iyt.png" alt="">
 	</div>
 	</div>	
+
+  <%= simple_form_for(album) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo, as: :file %>
+  <!-- [...] -->
+<% end %>
+
 </div>
 		
 </main>
